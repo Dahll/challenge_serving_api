@@ -1,1 +1,1 @@
-{"amazon_cells_labelled": {"rows": 1000, "columns": 2, "file_size": 58226}}
+{"amazon_cells_labelled": {"rows": 1000, "columns": 2, "file_size": 58226}, "X_train": {"rows": 750, "columns": 1, "file_size": 42370}, "X_test": {"rows": 250, "columns": 1, "file_size": 14353}, "y_train": {"rows": 750, "columns": 1, "file_size": 1506}, "y_test": {"rows": 250, "columns": 1, "file_size": 506}, "y_pred": {"rows": 250, "columns": 1, "file_size": 502}}

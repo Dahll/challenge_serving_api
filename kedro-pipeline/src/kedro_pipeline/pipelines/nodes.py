@@ -117,8 +117,9 @@ def evaluate(y_pred: pd.Series, y_test: pd.Series):
 
     
 
-    y_pred = y_pred.iloc[:, 0].to_numpy()
+    y_pred = y_pred.to_numpy()
     y_pred = np.argmax(y_pred, axis=1)
+    
     y_test = y_test.iloc[:, 0].to_numpy()
 
     accuracy = accuracy_score(y_pred, y_test)

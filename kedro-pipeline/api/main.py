@@ -3,8 +3,9 @@ from pathlib import Path
 import sys
 import os
 
-sys.path.append(str(Path(__file__).resolve().parents[1])+ "/kedro-pipeline/src/kedro_pipeline/pipelines")
-print(str(Path(__file__).resolve().parents[1])+ "/kedro-pipeline/src/kedro_pipeline/pipelines")
+
+sys.path.append(str(Path(__file__).resolve().parents[1])+ "/src/kedro_pipeline/pipelines")
+print(str(Path(__file__).resolve().parents[1])+ "/src/kedro_pipeline/pipelines")
 
 
 from nodes import inference
@@ -29,7 +30,7 @@ from sklearn.metrics import accuracy_score
 
 def load_artefacts():
     #Select path where mlflow is
-    path_uri = "file://" + str(Path(__file__).resolve().parents[1])+ "/kedro-pipeline/mlruns"
+    path_uri = "file://" + str(Path(__file__).resolve().parents[1])+ "/mlruns"
     mlflow.set_tracking_uri(path_uri)
     
     
@@ -41,7 +42,7 @@ def load_artefacts():
     run_id = runs.sort_values(by='start_time', ascending=False).iloc[0]["run_id"]
     
     #Create destination dir
-    destination_dir = os.path.join(pathlib.Path().absolute(), "data")
+    destination_dir = os.path.join(str(Path(__file__).resolve().parents[1]), "data/09_api_raw")
     Path(destination_dir).mkdir(parents=True, exist_ok=True)
     
     #Download artifacts
